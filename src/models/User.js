@@ -11,18 +11,20 @@ const User = mongoose.Schema({
         type: String,
         required: true
     },
-    password : {
+    password: {
         type: String,
-        required: true 
+        required: true
     },
-    receitas:[{
-        type:mongoose.Schema.Types.ObjectId,ref:receitas
+    receitas: [{
+        type: mongoose.Schema.Types.ObjectId, ref: receitas
     }],
-    despesas:[{
-        type:mongoose.Schema.Types.ObjectId,ref:despesas
+    despesas: [{
+        type: mongoose.Schema.Types.ObjectId, ref: despesas
     }]
-},{
-    timestamps: true
-});
+}, {
+        timestamps: true,
+    });
 
-module.exports = mongoose.model('User',User);
+
+
+module.exports = mongoose.model('User', User);

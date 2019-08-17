@@ -16,6 +16,8 @@ class DespesaController {
     
         await users.save();
 
+        req.io.sockets.in(users._id).emit('despesas', despesa);
+
         return res.json(despesa)
     }
 }

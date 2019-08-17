@@ -15,6 +15,8 @@ class ReceitaController{
     
         await users.save();
 
+        req.io.sockets.in(users._id).emit('receitas', receita);
+
         return res.json(receita);
     }
 }
